@@ -576,7 +576,7 @@ button {
 }
 
 .footer-subscribe-form {
-  display: inline-flex;
+  display: flex;
   gap: 24px;
 }
 
@@ -593,8 +593,9 @@ button {
   color: #ffffff;
   font-size: 12px;
   font-weight: 400;
-  line-height: 2;
+  line-height: 1.5;
   letter-spacing: 0.04em;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
 
 .footer-subscribe-email::placeholder {
@@ -613,13 +614,14 @@ button {
   line-height: 1.5;
   letter-spacing: 0.04em;
   border-radius: 4px;
+  min-width: 165px;
   border: none;
   background-color: #4d5ae5;
   display: inline-flex;
   padding: 8px 24px;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  margin-left: 16px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -643,6 +645,8 @@ button {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -661,6 +665,9 @@ button {
   border-radius: 4px;
   background-color: #fcfcfc;
   padding: 72px 24px 24px 24px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-window-close-button {
@@ -672,6 +679,7 @@ button {
   align-items: center;
   width: 24px;
   height: 24px;
+  padding: 0;
   background-color: #e7e9fc;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -690,7 +698,9 @@ button {
   background-color: #404bbf;
   outline-color: transparent;
   outline-offset: 2px;
+  border: none;
 }
+
 .modal-window-close-button:hover .modal-window-close-icon,
 .modal-window-close-button:focus .modal-window-close-icon {
   fill: #ffffff;
@@ -732,7 +742,8 @@ button {
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   padding-left: 38px;
-  background-color: #fcfcfc;
+  background-color: transparent;
+  outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -748,6 +759,7 @@ button {
   top: 50%;
   transform: translateY(-50%);
   left: 16px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-form-field:focus + .order-field-icon {
@@ -781,6 +793,13 @@ button {
   font-weight: 400;
   line-height: 1.17;
   letter-spacing: 0.04em;
+  background-color: transparent;
+  outline: transparent;
+  resize: none;
+}
+
+.comment-wrapper {
+  margin-bottom: 16px;
 }
 
 .modal-window-checkbox-wrapper {
@@ -823,7 +842,8 @@ button {
   margin-right: 8px;
   fill: transparent;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .user-policy-link {
